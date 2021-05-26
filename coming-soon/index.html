@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+		/>
+		<!-- displays site properly based on user's device -->
+
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./images/favicon-32x32.png"
+		/>
+
+		<title>Frontend Mentor | Base Apparel coming soon page</title>
+
+		<!-- Fonts -->
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- Styles -->
+		<link href="./main.css" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="cover">
+			<div class="cover-content">
+				<div class="cover-logo">
+					<img src="./images/logo.svg" alt="BASE APPAREL" />
+				</div>
+
+				<div class="cover-background"></div>
+
+				<div class="text-box">
+					<h1 class="text-title"><span>We're</span> coming soon</h1>
+					<p class="text-paragraph">
+						Hello fellow shoppers! We're currently building our new fashion
+						store. Add your email below to stay up-to-date with announcements
+						and our launch deals.
+					</p>
+					<form id="subscription-form">
+						<div class="subscription-box">
+							<input
+								class="email-input"
+								type="email"
+								placeholder="Email Address"
+							/>
+							<div class="icon-error">
+								<img src="./images/icon-error.svg" alt="!" />
+							</div>
+							<button class="send-button">
+								<img src="images/icon-arrow.svg" alt=">" />
+							</button>
+						</div>
+						<span class="message success-message"></span>
+						<span class="message error-message"></span>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<footer>
+			<p class="attribution">
+				Challenge by
+				<a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+					>Frontend Mentor</a
+				>. Coded by
+				<a href="https://github.com/StyledDEV/" target="_blank">StyledDev</a>.
+			</p>
+		</footer>
+
+		<script src="./app.js"></script>
+	</body>
+</html>

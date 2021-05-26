@@ -1,0 +1,258 @@
+/* Primary */
+$desaturated-red: hsl(0, 36%, 70%);
+$soft-red: hsl(0, 93%, 68%);
+
+/* Neutral */
+$dark-grayish-red: hsl(0, 6%, 24%);
+
+/* Gradients */
+$gradient1: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+$gradient2: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+
+/* Fonts */
+$body-font-family: 'Josefin Sans', -apple-system, helvetica, sans-serif;
+$body-font-size: 16px;
+
+/* Paddings */
+$padding-x: 5%;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::selection {
+    background-color: $desaturated-red;
+    color: $dark-grayish-red;
+}
+
+body {
+    font: $body-font-size $body-font-family;
+}
+
+.cover {
+    min-height: 100vh;
+    background: $gradient1;
+}
+
+.cover-content {
+    background-image: url(./images/bg-pattern-desktop.svg);
+    padding: $padding-x 0 0 10%;
+    min-height: 100vh;
+}
+
+.cover-logo {
+    margin-bottom: 5%;
+}
+
+.cover-background {
+    width: 40%;
+    min-height: 100vh;
+    position: absolute;
+    bottom: 0; right: 0;
+    background: url(./images/hero-desktop.jpg) top/cover no-repeat;
+}
+
+.text-box {
+    max-width: 400px;
+}
+
+.text-title {
+    font-size: 4em;
+    font-weight: 400;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+
+    span {
+        color: $desaturated-red;
+        font-weight: 300;
+    }
+}
+
+.text-paragraph {
+    color: $desaturated-red;
+    margin: 1em 0 2em 0;
+    line-height: 25px;
+}
+
+.subscription-box {
+    display: flex;
+    position: relative;
+}
+
+.email-input,
+.send-button {
+    border-radius: 50px;
+    outline: none;
+}
+
+.email-input {
+    height: 60px;
+    width: 100%;
+    border: 1px solid rgba($dark-grayish-red, 20%);
+    padding: 0 1.5em;
+    font: $body-font-size $body-font-family;
+    transition: border-color .3s;
+
+    &:focus {
+        border-color: rgba($desaturated-red, 70%);
+    }
+
+    &:focus::placeholder {
+        color: transparent;
+    }
+
+    &::placeholder {
+        color: rgba($desaturated-red, 70%);
+    }
+}
+
+.icon-error {
+    width: 30px; height: 30px;
+    position: absolute;
+    top: 50%; right: 150px;
+    transform: translateY(-50%);
+    display: none;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+    }
+
+    img::selection {
+        background-color: transparent;
+    }
+}
+
+.send-button {
+    background: $gradient2;
+    border: none;
+    width: 110px;
+    height: 100%;
+    cursor: pointer;
+    position: absolute;
+    top: 0; right: 0;
+    box-shadow: 0 10px 20px rgba($dark-grayish-red, 10%);
+    transition: opacity .5s, box-shadow .5s;
+
+    &:hover {
+        opacity: .5;
+        box-shadow: 0 15px 20px rgba($dark-grayish-red, 60%);
+    }
+
+    img::selection {
+        background-color: transparent;
+    }
+}
+
+.message {
+    display: inline-block;
+    padding: .5em 0 1em .5em;
+    font-size: .95em;
+
+    &.error-message {
+        color: $soft-red;
+    }
+
+    &.success-message {
+        color: $desaturated-red;
+    }
+}
+
+
+
+.attribution {
+    padding: 1em;
+    font-size: .8em;
+    text-align: center;
+    background: $desaturated-red;
+
+    a {
+        color: $dark-grayish-red;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+
+
+
+
+
+/* Media queries */
+@media screen and (max-width: 870px) {
+    
+    .cover-content {
+        padding: $padding-x 0;
+    }
+
+    .cover-logo {
+        padding-left: $padding-x;
+    }
+    
+    
+    .cover-background {
+        position: relative;
+        width: 100%;
+        height: 50vh;
+        background: url(./images/hero-mobile.jpg) top 30%/cover no-repeat;
+        margin-bottom: 10%;
+    }
+
+    .text-box {
+        max-width: 100%;
+    }
+
+    .text-title,
+    .text-paragraph {
+        text-align: center;
+    }
+
+    .text-title {
+        font-size: 3em;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .text-paragraph,
+    .subscription-box {
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .text-paragraph,
+    .email-input,
+    .message {
+        font-size: 1.1em;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .cover-logo {
+        margin-bottom: 0;
+        padding-bottom: 3%;
+
+        img {
+            transform: scale(.8);
+        }
+    }
+    
+    .cover-background {
+        height: 40vh;
+    }
+
+    .text-title {
+        max-width: 95%;
+        font-size: 2em;
+    }
+
+    .send-button {
+        width: 100px;
+    }
+}

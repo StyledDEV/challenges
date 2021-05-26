@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+		/>
+
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./images/favicon-32x32.png"
+		/>
+
+		<title>Frontend Mentor | Pricing component with toggle</title>
+
+		<!-- Fonts -->
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- Styles -->
+		<link href="./app.css" rel="stylesheet" />
+
+		<!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+		<style>
+			.attribution {
+				font-size: 11px;
+				text-align: center;
+			}
+			.attribution a {
+				color: hsl(228, 45%, 44%);
+			}
+		</style>
+	</head>
+	<body>
+		<main class="wrapper">
+			<h2 class="title">Our Pricing</h2>
+
+			<div class="toggle-price">
+				<span>Annually</span>
+				<label>
+					<input class="toggle-price-checkbox" type="checkbox" />
+					<div class="toggle-price-switch"></div>
+				</label>
+				<span>Monthly</span>
+			</div>
+
+			<div id="prices-box" class="prices-box"></div>
+		</main>
+
+		<div class="attribution">
+			Challenge by
+			<a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+				>Frontend Mentor</a
+			>. Coded by <a href="https://github.com/StyledDEV">StyledDEV</a>.
+		</div>
+
+		<!-- Scripts -->
+		<script type="module" src="./app.js"></script>
+	</body>
+</html>

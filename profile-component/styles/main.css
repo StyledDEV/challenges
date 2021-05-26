@@ -1,0 +1,130 @@
+:root {
+
+    /* ========== Colors ========== */
+
+    /* Primary */
+    --dark-cyan: hsl(185, 75%, 39%);
+    --very-dark-desaturated-blue: hsl(229, 23%, 23%);
+    --dark-grayish-blue: hsl(227, 10%, 46%);
+
+    /* Neutral */
+    --dark-gray: hsl(0, 0%, 59%);
+
+    /* ========== Custom ========== */
+    --white: hsl(0, 0%, 100%);
+    --transparent-dark-gray: rgba(150, 150, 150, .2);
+    
+    --body-bg: var(--dark-cyan);
+    --body-font-family: 'Kumbh Sans', -apple-system, Helvetica, sans-serif;
+    --body-font-size: 18px;
+    --body-font: var(--body-font-size) var(--body-font-family);
+
+    --card-bg: var(--white);
+    --card-shadow: 0 0 15px 5px rgba(0, 0, 0, .1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font: var(--body-font);
+    background: url('../images/bg-pattern-top.svg') bottom 50vh right 50vw / auto no-repeat fixed, url('../images/bg-pattern-bottom.svg') top 50vh left 50vw / auto no-repeat fixed;
+    background-color: var(--body-bg);
+    /* background-repeat: no-repeat, no-repeat; */
+    /* background-position: bottom 50vh right 50vw, top 50vh left 50vw; */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+/* Card */
+.card {
+    width: clamp(300px, 100%, 400px);
+    border-radius: 15px;
+    background-color: var(--card-bg);
+    box-shadow: var(--card-shadow);
+}
+
+.card__bg {
+    width: 100%;
+    height: 150px;
+    border-radius: 15px 15px 0 0;
+    background: var(--very-dark-desaturated-blue) url(../images/bg-pattern-card.svg) center / cover no-repeat;
+}
+
+.card__user__profile,
+.card__user__profile__img {
+    border-radius: 50%;
+}
+
+.card__user__profile {
+    border: 5px solid var(--card-bg);
+    width: 100px;
+    height: 100px;
+    margin: -50px auto 0 auto;
+}
+
+.card__user__profile__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card__user__data {
+    margin: 1.5em 0;
+    text-align: center;
+}
+
+.card__user__data__item {
+    display: inline-block;
+}
+
+.card__user__data__item[item-id="name"] {
+    font-weight: bold;
+}
+
+.card__user__data__item[item-id="city"] {
+    font-size: 80%;
+    display: block;
+}
+
+
+.card__user__account-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5em 2.5em;
+    border-top: 1px solid var(--transparent-dark-gray);
+}
+
+.card__user__account-info__item {
+    display: block;
+    text-align: center;
+}
+
+.card__user__account-info__item[item-id="amount"] {
+    font-weight: bold;
+    margin-bottom: .3em;
+    font-size: 105%;
+}
+
+.card__user__account-info__item[item-id="amount-type"] {
+    font-size: 75%;
+    letter-spacing: 1px;
+}
+
+/* Modifiers */
+.dark-gray {
+    color: var(--dark-gray);
+}
+
+.very-dark-desaturated-blue {
+    color: var(--very-dark-desaturated-blue);
+}

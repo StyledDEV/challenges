@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es-LA">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+		/>
+		<title>Colores para todos los gustos</title>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap"
+			rel="stylesheet"
+		/>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			body {
+				font-family: "Open Sans", -apple-system, -system-ui, "Helvetica Neue",
+					sans-serif;
+				text-rendering: optimizeLegibility;
+				padding: 1em;
+				background-color: #36393f;
+			}
+
+			#colors {
+				display: flex;
+				justify-content: center;
+				flex-wrap: wrap;
+				padding: 1em 0;
+			}
+
+			.colorContainer {
+				margin: 0 5em 5em 0;
+			}
+
+			.colorElement {
+				font-size: 15px;
+				font-weight: 600;
+				padding: 0 0.5em 0.5em 55px;
+				display: inline-block;
+				position: relative;
+				min-height: 40px;
+			}
+
+			.colorElement::before,
+			.colorElement::after {
+				position: absolute;
+			}
+
+			.colorElement::before {
+				content: "";
+				top: 0;
+				left: 0;
+				width: 40px;
+				height: 40px;
+				background-color: crimson;
+				background-image: url(profile.png);
+				background-size: cover;
+				background-repeat: no-repeat;
+				border-radius: 50%;
+			}
+
+			.colorElement::after {
+				content: "blabla..";
+				font-size: 14px;
+				font-weight: 400;
+				color: #fafafa;
+				bottom: 0;
+				left: 55px;
+			}
+
+			.colorValue {
+				display: block;
+				margin-top: 0.5em;
+				font-size: 13px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="colors"></div>
+		<script>
+			const getNickname = () => {
+				nickname = prompt("Escribe tu nickname:") || "Nickname";
+				if (nickname == " ") {
+					getNickname();
+				}
+			};
+
+			const getMaximum = () => {
+				maximum = prompt("¿Cuántos colores quieres generar?") || 100;
+				if (maximum == " ") {
+					getMaximum();
+				}
+			};
+
+			getNickname();
+			getMaximum();
+
+			const randomColor = () => {
+				const chars = "0123456789ABCDEF";
+				let colorValue = "#";
+
+				for (let i = 0; i < 6; i++) {
+					colorValue += chars[Math.floor(Math.random() * 16)];
+				}
+
+				return colorValue;
+			};
+
+			const createElement = (
+				element,
+				className = "",
+				content,
+				color = "",
+				appendTo
+			) => {
+				const newElement = document.createElement(element);
+
+				newElement.className = className;
+				newElement.innerHTML = content;
+				newElement.style.color = color;
+
+				appendTo.appendChild(newElement);
+			};
+
+			let colorsBox = document.getElementById("colors");
+
+			for (var i = 0; i <= maximum; i++) {
+				const color = randomColor();
+				createElement("div", "colorContainer", "", "", colorsBox);
+				let colorContainer = document.querySelectorAll(".colorContainer")[i];
+
+				createElement("span", "colorElement", nickname, color, colorContainer);
+				createElement("span", "colorValue", color, color, colorContainer);
+			}
+		</script>
+	</body>
+</html>

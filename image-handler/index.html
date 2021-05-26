@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+		/>
+
+		<title>Image Handler when it changes</title>
+
+		<style>
+			.ImageContainer {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+
+				align-items: center;
+				min-height: 100vh;
+				background: #111;
+			}
+
+			.ImageContainer.triggered {
+				justify-content: flex-start; /* Centra verticalmente (sólo si flex-direction es column) */
+			}
+
+			.ImageContainerImg {
+				width: 500px; /* Anchura */
+				height: 150px; /* Altura */
+				object-fit: cover;
+				object-position: top;
+				border-radius: 10px;
+				border: 5px solid #333;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>
+			Si el ancho de la imagen es mayor al 150% del alto de la misma, ésta se
+			coloca en la parte superior. En caso contrario se coloca en el centro
+		</h2>
+
+		<div class="ImageContainer">
+			<img
+				class="ImageContainerImg"
+				src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Leopard_africa.jpg"
+			/>
+			<span style="color: #fff" id="imageData"></span>
+		</div>
+
+		<footer>
+			By <a href="https://github.com/FOWMind/" target="_blank">FOW Mind</a>
+		</footer>
+
+		<script>
+			const ImageContainer = document.querySelector(".ImageContainer");
+			const ImageContainerImg =
+				ImageContainer.querySelector(".ImageContainerImg");
+
+			const resizeObserver = new ResizeObserver((entries) =>
+				HandleImage(ImageContainer, ImageContainerImg)
+			);
+			resizeObserver.observe(ImageContainerImg);
+
+			function HandleImage(ImageContainer, Image) {
+				const { clientWidth, clientHeight } = Image;
+				document.getElementById("imageData").innerText = `
+          Altura: ${clientHeight} Pixeles
+          Anchura: ${clientWidth} Pixeles
+          Usa la herramienta inspeccionar para editar el tamaño de la imagen
+        `;
+
+				clientWidth > clientHeight + clientHeight / 2
+					? ImageContainer.classList.add("triggered")
+					: ImageContainer.classList.remove("triggered");
+			}
+		</script>
+	</body>
+</html>

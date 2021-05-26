@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+		/>
+		<title>Movies</title>
+
+		<!-- Fonts -->
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- Styles -->
+		<link href="src/style.css" rel="stylesheet" />
+	</head>
+	<body>
+		<main class="wrapper">
+			<h1 class="wrapper-title">List of movies with OMDb API</h1>
+			<form id="search-form">
+				<input
+					class="movie-search"
+					type="search"
+					placeholder="Search a movie"
+				/>
+			</form>
+			<div class="movies"></div>
+		</main>
+
+		<!-- Scripts -->
+		<script type="module" src="src/index.js"></script>
+	</body>
+</html>

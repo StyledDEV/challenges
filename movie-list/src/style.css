@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto Mono", "Open Sans", --apple-system, helvetica, sans-serif, arial;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #eabf9f linear-gradient(0deg, #eabf9f 20%, #cc7d41 100%) no-repeat;
+  z-index: -1;
+}
+
+img {
+  max-width: 100%;
+  display: inline-block;
+}
+
+.wrapper {
+  text-align: center;
+}
+.wrapper .wrapper-title {
+  color: #f2f2f2;
+  margin: 5% 0;
+  text-transform: uppercase;
+}
+.wrapper .movie-search {
+  width: 90%;
+  max-width: 350px;
+  height: 40px;
+  padding: 0 1em;
+  font: 1em "Roboto Mono", "Open Sans", --apple-system, helvetica, sans-serif, arial;
+  border: none;
+  background-color: rgba(250, 243, 224, 0.9);
+  margin-bottom: 5%;
+}
+.wrapper .movie-search::-moz-placeholder {
+  color: #eabf9f linear-gradient(0deg, #eabf9f 20%, #cc7d41 100%) no-repeat;
+}
+.wrapper .movie-search:-ms-input-placeholder {
+  color: #eabf9f linear-gradient(0deg, #eabf9f 20%, #cc7d41 100%) no-repeat;
+}
+.wrapper .movie-search::placeholder {
+  color: #eabf9f linear-gradient(0deg, #eabf9f 20%, #cc7d41 100%) no-repeat;
+}
+.wrapper .movie-search:focus {
+  outline: none;
+  background-color: #faf3e0;
+}
+.wrapper .movie-search:focus::-moz-placeholder {
+  color: transparent;
+}
+.wrapper .movie-search:focus:-ms-input-placeholder {
+  color: transparent;
+}
+.wrapper .movie-search:focus::placeholder {
+  color: transparent;
+}
+.wrapper .movies {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.wrapper .movies .message-404 {
+  width: 100%;
+}
+.wrapper .movies .single-movie {
+  width: 50%;
+  max-width: 250px;
+  margin-bottom: 10%;
+  overflow-x: hidden;
+}
+.wrapper .movies .single-movie .movie-img {
+  width: 100%;
+  max-height: 300px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  position: relative;
+}
+.wrapper .movies .single-movie .movie-title {
+  font-size: 1.5em;
+  text-transform: uppercase;
+  max-width: 90%;
+  margin: 0 auto;
+}
+.wrapper .movies .single-movie .movie-year, .wrapper .movies .single-movie .movie-category {
+  font-size: 1.1em;
+}
+
+@media screen and (max-width: 520px) {
+  .wrapper .movies {
+    display: block;
+  }
+  .wrapper .movies .single-movie {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

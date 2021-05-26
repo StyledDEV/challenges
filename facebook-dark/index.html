@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<!-- Metas -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+		/>
+		<meta name="author" content="StyledDEV" />
+
+		<!-- Styles -->
+		<link href="styles/prefixed-all.css" rel="stylesheet" />
+
+		<title>Dark Facebook</title>
+	</head>
+	<body>
+		<!-- Whole container -->
+		<div class="container">
+			<!-- Header -->
+			<header class="header">
+				<div class="logo">
+					<img src="images/logos/fb-logo.svg" alt="Facebook" />
+				</div>
+			</header>
+			<!-- Header end -->
+
+			<!-- Layout -->
+			<div class="main-wrapper row rwd-column column-center between wrap">
+				<!-- Tour 1 -->
+				<div class="tour">
+					<div>
+						<img
+							class="image center"
+							src="images/main-screen/requests.svg"
+							alt="Send and accept friend requests."
+						/>
+						<h3 class="mini-title center">Know new people</h3>
+						<p class="paragraph center">
+							Search people and send requests to add them.
+						</p>
+					</div>
+				</div>
+				<!-- Tour 1 end -->
+
+				<!-- Login form -->
+				<div class="form-container">
+					<form id="login-form">
+						<input type="email" placeholder="Email" class="input" />
+						<input
+							type="password"
+							min="4"
+							placeholder="Password"
+							class="input"
+						/>
+						<input type="submit" value="Log in" class="input" />
+					</form>
+				</div>
+				<!-- Login form end -->
+
+				<!-- Tour 2 -->
+				<div class="tour">
+					<div>
+						<img
+							class="image center"
+							src="images/main-screen/chat.svg"
+							alt="Chat with your family, friends or job mates."
+						/>
+						<h3 class="mini-title center">Chatting</h3>
+						<p class="paragraph center">
+							Chat with your Facebook friends. Open the chat and start writting.
+						</p>
+					</div>
+				</div>
+				<!-- Tour 2 end -->
+			</div>
+			<!-- Layout end -->
+		</div>
+		<!-- Whole container end -->
+
+		<!-- Footer -->
+		<div class="footer">
+			<p>
+				This website and its creator have no relationship whatsoever with
+				"Facebook" or any of its variants.
+				<br />
+				This site is for educational purposes only, and no profit is intended
+				from its content. The images used on this website are properties of
+				"Facebook" (and/or related) and "UnDraw" (and/or their authors).
+				<br />
+				&copy; All rights reserved.
+			</p>
+		</div>
+		<!-- Footer end -->
+
+		<!-- Script -->
+		<script type="text/javascript">
+			(function () {
+				document
+					.querySelector("#login-form")
+					.addEventListener("submit", (e) => {
+						e.preventDefault();
+						alert("Hey, this is just a design!");
+					});
+			})();
+		</script>
+	</body>
+</html>

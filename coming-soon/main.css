@@ -1,0 +1,246 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-moz-selection {
+  background-color: #ce9797;
+  color: #413a3a;
+}
+
+::selection {
+  background-color: #ce9797;
+  color: #413a3a;
+}
+
+body {
+  font: 16px "Josefin Sans", -apple-system, helvetica, sans-serif;
+}
+
+.cover {
+  min-height: 100vh;
+  background: linear-gradient(135deg, white, #fff5f5);
+}
+
+.cover-content {
+  background-image: url(./images/bg-pattern-desktop.svg);
+  padding: 5% 0 0 10%;
+  min-height: 100vh;
+}
+
+.cover-logo {
+  margin-bottom: 5%;
+}
+
+.cover-background {
+  width: 40%;
+  min-height: 100vh;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: url(./images/hero-desktop.jpg) top/cover no-repeat;
+}
+
+.text-box {
+  max-width: 400px;
+}
+
+.text-title {
+  font-size: 4em;
+  font-weight: 400;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+}
+.text-title span {
+  color: #ce9797;
+  font-weight: 300;
+}
+
+.text-paragraph {
+  color: #ce9797;
+  margin: 1em 0 2em 0;
+  line-height: 25px;
+}
+
+.subscription-box {
+  display: flex;
+  position: relative;
+}
+
+.email-input,
+.send-button {
+  border-radius: 50px;
+  outline: none;
+}
+
+.email-input {
+  height: 60px;
+  width: 100%;
+  border: 1px solid rgba(65, 58, 58, 0.2);
+  padding: 0 1.5em;
+  font: 16px "Josefin Sans", -apple-system, helvetica, sans-serif;
+  transition: border-color 0.3s;
+}
+.email-input:focus {
+  border-color: rgba(206, 151, 151, 0.7);
+}
+.email-input:focus::-moz-placeholder {
+  color: transparent;
+}
+.email-input:focus:-ms-input-placeholder {
+  color: transparent;
+}
+.email-input:focus::placeholder {
+  color: transparent;
+}
+.email-input::-moz-placeholder {
+  color: rgba(206, 151, 151, 0.7);
+}
+.email-input:-ms-input-placeholder {
+  color: rgba(206, 151, 151, 0.7);
+}
+.email-input::placeholder {
+  color: rgba(206, 151, 151, 0.7);
+}
+
+.icon-error {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  right: 150px;
+  transform: translateY(-50%);
+  display: none;
+}
+.icon-error::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.icon-error img::-moz-selection {
+  background-color: transparent;
+}
+.icon-error img::selection {
+  background-color: transparent;
+}
+
+.send-button {
+  background: linear-gradient(135deg, #f8bfbf, #ee8c8c);
+  border: none;
+  width: 110px;
+  height: 100%;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  box-shadow: 0 10px 20px rgba(65, 58, 58, 0.1);
+  transition: opacity 0.5s, box-shadow 0.5s;
+}
+.send-button:hover {
+  opacity: 0.5;
+  box-shadow: 0 15px 20px rgba(65, 58, 58, 0.6);
+}
+.send-button img::-moz-selection {
+  background-color: transparent;
+}
+.send-button img::selection {
+  background-color: transparent;
+}
+
+.message {
+  display: inline-block;
+  padding: 0.5em 0 1em 0.5em;
+  font-size: 0.95em;
+}
+.message.error-message {
+  color: #f96262;
+}
+.message.success-message {
+  color: #ce9797;
+}
+
+.attribution {
+  padding: 1em;
+  font-size: 0.8em;
+  text-align: center;
+  background: #ce9797;
+}
+.attribution a {
+  color: #413a3a;
+}
+.attribution a:hover {
+  text-decoration: none;
+}
+
+/* Media queries */
+@media screen and (max-width: 870px) {
+  .cover-content {
+    padding: 5% 0;
+  }
+
+  .cover-logo {
+    padding-left: 5%;
+  }
+
+  .cover-background {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    background: url(./images/hero-mobile.jpg) top 30%/cover no-repeat;
+    margin-bottom: 10%;
+  }
+
+  .text-box {
+    max-width: 100%;
+  }
+
+  .text-title,
+.text-paragraph {
+    text-align: center;
+  }
+
+  .text-title {
+    font-size: 3em;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .text-paragraph,
+.subscription-box {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .text-paragraph,
+.email-input,
+.message {
+    font-size: 1.1em;
+  }
+}
+@media screen and (max-width: 375px) {
+  .cover-logo {
+    margin-bottom: 0;
+    padding-bottom: 3%;
+  }
+  .cover-logo img {
+    transform: scale(0.8);
+  }
+
+  .cover-background {
+    height: 40vh;
+  }
+
+  .text-title {
+    max-width: 95%;
+    font-size: 2em;
+  }
+
+  .send-button {
+    width: 100px;
+  }
+}
