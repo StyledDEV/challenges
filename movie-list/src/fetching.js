@@ -11,20 +11,20 @@ const defaultMoviePoster = 'https://artgalleryofballarat.com.au/wp-content/uploa
 
 const noResultsText = `
     <div class="message-404">
-        <h2>No se encontraron resultados</h2>
-        <p>Verifica tu búsqueda e inténtalo de nuevo</p>
+        <h2>No results found</h2>
+        <p>Check your search and try again!</p>
     </div>
 `
 
 const singleMovieHtml = movie => `
     <div class="single-movie">
         <a href="https://google.com/search?q=${movie.Title}" target="_blank">
-            <img class="movie-img" 
-            src="${movie.Poster !== 'N/A' ? movie.Poster : defaultMoviePoster}" 
-            alt="Poster ${movie.Title}" 
+            <img class="movie-img"
+            src="${movie.Poster !== 'N/A' ? movie.Poster : defaultMoviePoster}"
+            alt="Poster ${movie.Title}"
             />
         </a>
-        
+
         <h2 class="movie-title">${movie.Title}</h2>
         <p class="movie-year">Year: ${movie.Year}</p>
         <p class="movie-category">Category: ${upperFirstLetter(movie.Type)}</p>
@@ -48,7 +48,7 @@ const fetchApi = async ({ search, printIn }) => {
     })
     const data = await response.json()
     const searchResults = data.Search
-    
+
     const movieList = []
 
     if (searchResults != undefined) {
@@ -61,11 +61,11 @@ const fetchApi = async ({ search, printIn }) => {
         printIn.innerHTML = noResultsText
     }
 
-    
+
     if (search == '') {
         printIn.innerHTML = ''
     }
-    
+
 }
 
 export default fetchApi
