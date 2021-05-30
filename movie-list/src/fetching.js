@@ -35,7 +35,7 @@ const addMovieToTheList = (searchResults, movieList) =>
 	searchResults.map((movie) => movieList.push(movie));
 
 const fetchApi = async ({ search, printIn }) => {
-	const api = `http://cors.io/?https://www.omdbapi.com/?apikey=${API_KEY}&s=${search}`;
+	const api = `https://cors.io/?https://www.omdbapi.com/?apikey=${API_KEY}&s=${search}`;
 
 	const response = await fetch(api, {
 		method: "get",
