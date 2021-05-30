@@ -4,7 +4,7 @@ const API_KEY = "275405d5";
 const upperFirstLetter = (string) =>
 	string.charAt(0).toUpperCase() + string.slice(1);
 
-const defaultMoviePoster = "./placeholder.png";
+const defaultMoviePoster = "./src/placeholder.png";
 
 const noResultsText = `
     <div class="message-404">
